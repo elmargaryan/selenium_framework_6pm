@@ -10,7 +10,7 @@ import allure
 @pytest.fixture()
 def test_driver():
     options = Options()
-    # options.add_argument('--headless=new')
+    options.add_argument('--headless=new')
     options.page_load_strategy = 'eager'
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
