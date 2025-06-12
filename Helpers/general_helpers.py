@@ -29,6 +29,16 @@ class Helper:
             EC.presence_of_element_located(loc)
         )
         return elem
+    
+    def find_all(self, loc, timeout=10):
+        try:
+            elements = WebDriverWait(self.driver, timeout).\
+                until(EC.presence_of_all_elements_located(loc),
+                    message=f"Elements '{loc}' not found!")
+        except Exception as e:
+            self.test_logger.error(e)
+            return False
+        return elements
 
     def find_and_click(self, loc, sec=60):
         elem = WebDriverWait(self.driver, sec).until(EC.element_to_be_clickable(loc))

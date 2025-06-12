@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from Helpers.general_helpers import Helper
+from helpers.general_helpers import Helper
 from selenium.webdriver.common.keys import Keys
 
 class Home(Helper): 
